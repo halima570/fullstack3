@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    .second-div{
+        background-color: aliceblue;
+        width: 28%;
+        margin-top: 10px;
+    }
+    .shoping-cart{
+        display: flex;align-items: center;justify-content: center;
+color: rgb(3, 3, 47);
+background-color: rgb(172, 168, 168) ;
+font-size: 30px;
+padding: 10px;
+margin-bottom: 10px;
+    }
+    body{
+
+        background-color: rgb(232, 138, 14);
+    }
+    .first-div{
+width: 70%;
+        margin: 10px;
+        background-color: rgb(243, 241, 241);
+    }
+.hol-div{
+display: flex;
+
+
+}
+.flex{
+display: flex;
+flex-wrap: wrap;
+}
+.flex1{
+border: 1 solid black;
+width:280px ;
+height: 320px;
+background-color: aliceblue;
+margin: 5px;
+}
+.flex1:hover{
+
+    box-shadow: 5px 10px rgb(18, 18, 18);}
+img{
+    width:90px ;
+height: 180px;
+}
+button{
+    padding: 3px;
+border: 1 solid blue;
+background-color: blue;
+border-radius: 15px;
+color:aliceblue
+}
+button:hover{
+color: black;
+background-color: aqua;
+}
+.products{
+    display: flex;align-items: center;justify-content: center;
+color: rgb(3, 3, 47);
+background-color: rgb(172, 168, 168) ;
+font-size: 30px;
+padding: 10px;
+margin-bottom: 10px;
+}
+
+</style>
+<div class="hol-div">
+<div class="first-div">
+
+<div class="products">PRODUCTS</div>
+
+<div class="flex">
+<!--------img1-->
+<div class="flex1">
+<div class="toshopingcart">
+<img src="image.jpg" alt="">
+<p class="productName">PC Portable HP Pavilion 15 i5</p>
+
+<p >Price: <span id="price"> 1000  </span> dh</p>
+<button class="addToCart" id="1">ADD TO MY SHOPPING CART</button></div>
+</div>
+<!-------------------img2--------------->
+
+<div class="flex1"><div class="toshopingcart">
+    <img src="image2.jpg" alt="">
+
+    <p class="productName"> iPhone 14 Pro Max 128GB </p>
+    <p >Price: <span id="price"> 1000  </span> dh</p>
+    <button class="addToCart" data-product-id="2">ADD TO MY SHOPPING CART</button></div>
+</div>
+<!-------------------img3--------------->
+<div class="flex1"><div class="toshopingcart">
+    <img src="image3.jpg" alt="">
+    <p class="productName">Imprimante Multifonction </p>
+    <p >Price: <span id="price"> 1000  </span> dh</p>
+    <button class="addToCart" data-product-id="3">ADD TO MY SHOPPING CART</button></div>
+</div>
+<!-------------------img4--------------->
+<div class="flex1"><div class="toshopingcart">
+    <img src="image4.jpg" alt="">
+    <p class="productName"> Chargeur portable Power Bank</p>
+    <p >Price: <span id="price"> 1000  </span> dh</p>
+    <button class="addToCart" data-product-id="4">ADD TO MY SHOPPING CART</button></div>
+</div>
+<!-------------------img5--------------->
+<div class="flex1"><div class="toshopingcart">
+    <img src="image5.jpg" alt="">
+    <p class="productName">Écouteurs Apple AirPods Sans fil </p>
+    <p >Price: <span id="price"> 1000  </span> dh</p>
+    <button class="addToCart" data-product-id="5">ADD TO MY SHOPPING CART</button></div>
+</div>
+<!-------------------img6--------------->
+<div class="flex1"><div class="toshopingcart">
+    <img src="image6.jpg" alt="">
+    <p class="productName">Tablet Samsung Galaxy</p>
+    <p >Price: <span id="price"> 1000  </span> dh</p>
+    <button class="addToCart" data-product-id="6">ADD TO MY SHOPPING CART</button></div>
+</div>
+<!-------------------img7--------------->
+<div class="flex1"><div class="toshopingcart">
+    <img src="image7.jpg" alt="">
+    <p class="productName">Enregistreur de lecteur de cassette radio</p>
+    <p >Price: <span id="price"> 1000  </span> dh</p>
+    <button class="addToCart" data-product-id="7">ADD TO MY SHOPPING CART</button></div>
+</div>
+<!-------------------img8--------------->
+<div class="flex1"><div class="toshopingcart">
+    <img src="image8.jpg" alt="">
+    <p class="productName">Chargeur Infinix Rapide Original</p>
+    <p >Price: <span id="price"> 1000  </span> dh</p>
+    <button class="addToCart" data-product-id="8">ADD TO MY SHOPPING CART</button></div>
+</div>
+
+
+
+</div>
+
+
+</div>
+<!------------shopingcart------------------->
+<div class="second-div">
+<div class="shoping-cart">shoping Cart</div>
+<div class="items">
+
+
+
+</div>
+<div class="total">
+<p>Total:<span id="total-price">0</span> dh</p>
+</div>
+</div>
+
+</div>
+<!---------------javascript-------------------->
+<script>
+let productsInCart=[];
+
+var parentElement=document.querySelector(".items");
+var products=Array.from(document.querySelectorAll(".toshopingcart"));
+var cartSumPrice=document.getElementById("total-price")
+
+const countTheSumPrice=function(){
+    let sumPrice=0;
+    productsInCart.forEach(product=>{
+        sumPrice+=product.price;
+    });
+    return sumPrice;
+}
+
+const updateShoppingCartHTML=function(){
+    if(productsInCart.length>0){
+let result=productsInCart.map(product=>{
+    return `
+    <div class="flex1"><div class="toshopingcart">
+    <img src="${product.image}" alt="">
+    <p class="productName">${product.name}</p></div>
+    <p >Price: <span id="price">${product.price}</span> dh</p>
+   
+</div>`
+}).join('');
+parentElement.innerHTML=result;
+cartSumPrice.innerHTML=countTheSumPrice()+"dh";
+    }
+    else{
+        parentElement.innerHTML="<h4>your shopping cart in empty</h4>"
+    }
+}
+
+
+function updateProductsInCart(product){
+for(let i=0;i<productsInCart<length;i++){
+    if(productsInCart[i].id==product.id){
+        productsInCart[i].count+=1;
+        productsInCart[i].price=productsInCart[i].basePrice*productsInCart[i].count;
+   return; }
+}
+
+
+productsInCart.push(product);
+
+}
+
+
+
+products.map(product => 
+   { product.addEventListener('click',(e)=>{
+    console.log(e.target);
+       if(e.target.classList.contains('addToCart')){
+   product= e.target.parentElement;
+        const productID=e.target.id;
+        console.log(productID);
+        const productName = product.querySelector('.productName').innerHTML;
+			const productPrice =product.querySelector('#price').innerHTML;
+			const productImage = product.querySelector('img').src;
+			let productToCart = {
+				name: productName,
+				image: productImage,
+				id: productID,
+				count: 1,
+				price: +productPrice,
+				basePrice: +productPrice,
+			}
+			updateProductsInCart(productToCart);
+			updateShoppingCartHTML();
+       } 
+    })
+});
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
