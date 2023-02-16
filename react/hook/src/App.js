@@ -5,59 +5,46 @@ import Reducer from './reducer';
 import Effect from './axios';
 import Ref from './ref';
 import Reff from './useref.js';
+import Test from './Custom';
+import Context from './useContext.js';
+function App({ date }) {
 
-class App extends React.Component() {
-state={
-myarr:[
-  {id:1,name:'halima'}
-]
+const [currentDate, setCurrentDate] = useState(new Date());
+    const [count, setCount] = useState(0);
 
 
-
-}
-constructor(){
-
-  super()
-}
-componentDidMont=()=>{
-console.log('helo component')
-}
-
-handleAdd=(event)=>{
-var myVar=this.state.myarr;
-myVar.push(
-  {id:2,name:'hassan'},
-  {id:3,name:'kamal'}
-)
-this.setState({myarr:myVar})
-
-}
-handleDelete=()=>{
-  var myVar=this.state.myarr;
-  myVar.pop()
-  this.setState({myarr:myVar})
-}
-  render(){
+  function updateCount(byValue) {
+    
+    setCount(count + byValue);
+    setCurrentDate(new Date());
+  }
+ 
+  function formatDate() {
+    const hour = currentDate.getHours();
+    const minute = currentDate.getMinutes();
+    const second = currentDate.getSeconds();
+ 
+    return `${hour}:${minute}:${second}`;
+  }
+ 
+  const prettyDate = formatDate();
+ const {name,email}=React.useContext(Context);
   return (
     <div className="App">
-     
-{/* <Count />
-<Input />
-<Reducer/>
-<Effect/>
-<Ref/>
-<Usecontext/>*/}
+      <h2>
+        You clicked {count} times, last time at {prettyDate}!
+      </h2>
+ 
+      <button onClick={() => updateCount(-1)}>Decrement</button>
+      <button onClick={() => updateCount(1)}>Increment</button>
+      <Test/>
 
 
-<button onClick={this.handleAdd}>add</button>
-<button onClick={this.handleDelete}>delete</button>
-
-
-
-
+<h3>{name}</h3><span>{email}</span>
 
     </div>
-  );}
-}
+  );
+ }
+
 
 export default App;

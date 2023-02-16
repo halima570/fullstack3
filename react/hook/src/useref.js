@@ -9,7 +9,7 @@ function Reff() {
     };
    
     return (
-      <div className="App">
+      <div className="Reff">
         <p>{name}</p>
         <h1>Who is your favorite Games of throne character</h1>
    
