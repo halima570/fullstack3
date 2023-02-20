@@ -2,17 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { BrowserRouter ,Route,Routes } from 'react-router-dom';
-import Pagedescription from './pagedescription';
+import { BrowserRouter } from 'react-router-dom';
+import Timer from './exemples/timer';
+import Usepa from './exemples/usepara';
+import Match from './exemples/match';
+import Nestede from './exemples/nestedroute';
+import Outlete from './exemples/outlet';
+import Priv from './exemples/seeprivate';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-<BrowserRouter>
-    <Routes>
-        <Route path="/pagedescription/:id" element={<Pagedescription/>} />
-        <Route path="/" element={<App/>}/>
-      </Routes>
-</BrowserRouter>
+    <BrowserRouter>
+    <Outlete/>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

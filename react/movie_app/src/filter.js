@@ -5,14 +5,16 @@ function Filter({movies,setMovies}) {
     const [titleFilter, setTitleFilter] = useState("");
     const [rateFilter, setRateFilter] = useState(0);
 
-    const filteredItems = movies.filter(movie=> {
+    const filteredItems =()=> movies.filter(movie=> {
       const matchesTitle = movie.title.toLowerCase().includes(titleFilter.toLowerCase());
-      const matchesRating = movie.rating >= rateFilter;
-      return matchesTitle && matchesRating;
+      return matchesTitle
     });
 
     function filters(){
-      setMovies(filteredItems())
+      
+      let matchtitle=filteredItems()
+      setMovies(matchtitle.filter((movie)=>movie.vote_average>=rateFilter))
+
     }
 
 

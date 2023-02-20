@@ -4,7 +4,8 @@ import Movielist from "./movielist";
 import Addmovie from "./addmovie";
 import React ,{useEffect,useState} from "react";
 import axios from "axios";
-
+import { Link } from 'react-router-dom';
+import Pagedescription from "./pagedescription";
 function App() {
 
   const [movies,setMovies]=useState([]);
@@ -19,10 +20,14 @@ function App() {
      });
   },[])
 
+
+
+
   
 
   return (
     <div className="App">
+      <Link to='/' >home Pge</Link>
 <div>
   <h1 className="text-yellow-500 font-bold text-5xl text-center m-3">WELCOM TO MOVIES APP</h1>
 </div>
@@ -32,6 +37,8 @@ function App() {
 
 
 <Addmovie movies={movies} setMovies={setMovies}  /> 
+
+
 
     </div> 
   );

@@ -9,6 +9,7 @@ const Movielist = ({movies}) => {
         {movies.map(movie => (
           <div className="h-screen w-screen snap-start" >
           <Moviecart
+          id={movie.id}
             title={movie.title}
             overview={movie.overview}
             backdrop_path={movie.backdrop_path}
