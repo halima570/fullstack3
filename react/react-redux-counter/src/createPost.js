@@ -15,7 +15,7 @@ const CreatePost = (props) => {
         props.addArticle({
             id: Date.now(),
             title,
-            content
+            content,
         })    }
    
     return (
@@ -29,13 +29,7 @@ const CreatePost = (props) => {
                 <textarea name="content" id="content" cols="30" rows="10" onChange={e => setContent(e.target.value)} />
             </div>
             <div>
-                <button onClick={handleSubmit} type="button" value="Add" >hello</button>
+                <button onClick={handleSubmit} type="button" value="Add" >submit</button>
             </div>
-            </>
-
-
-
-    )
-}
-
+            </>)}
 export default connect(null, mapDispatchToProps)(CreatePost)
