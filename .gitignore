@@ -3,4 +3,14 @@ react/firstreact/node_modules/
 react/secondreact/node_modules/
 react/state/node_modules/
 react/hook/node_modules/
+react/api/node_modules/
+react/form/node_modules/
+react/form_with_redux/node_modules/
+react/movie_app/node_modules/
+react/middleware/node_modules/
+react/react-redux-counter/node_modules/
+react/redux_toolkit/node_modules/
+react/redux_toolkit_2/node_modules/
+react/router/node_modules/
+react/node_modules/
 
