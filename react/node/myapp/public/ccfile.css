@@ -1,0 +1,122 @@
+/* Reset styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Global styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  nav {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 20px;
+  }
+  
+  nav a:hover {
+    background-color: #555;
+  }
+  
+  /* Home page styles */
+  .home {
+    background-color: #f5f5f5;
+    padding: 50px 0;
+  }
+  
+  .home h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .home p {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  /* Our services page styles */
+  .services {
+    background-color: #fff;
+    padding: 50px 0;
+  }
+  
+  .services h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .services ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .services li {
+    width: 30%;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  /* Contact us page styles */
+  .contact {
+    background-color: #fff;
+    padding: 50px 0;
+  }
+  
+  .contact h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact label {
+    margin-bottom: 10px;
+  }
+  
+  .contact input,
+  .contact textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .contact button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .contact button[type="submit"]:hover {
+    background-color: #555;
+  }
