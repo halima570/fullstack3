@@ -9,7 +9,7 @@ const workingHoursMiddleware = (req, res, next) => {
   const dayOfWeek = now.day();
   const hourOfDay = now.hour();
 
-  if (dayOfWeek >= 1 && dayOfWeek <= 5 && hourOfDay >= 9 && hourOfDay < 00) {
+  if (dayOfWeek >= 1 && dayOfWeek <= 5 && hourOfDay >= 9 && hourOfDay < 17) {
     next();
   } else {
     res.status(404).send('Sorry, we are closed now.');
@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
     <html>
       <head>
         <title>Home page</title>
-        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/ccfile.css">
       </head>
       <body>
         <nav>
@@ -43,7 +43,7 @@ app.get('/services', (req, res) => {
     <html>
       <head>
         <title>Our Services</title>
-        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/ccfile.css">
       </head>
       <body>
         <nav>
@@ -67,7 +67,7 @@ app.get('/contact', (req, res) => {
     <html>
       <head>
         <title>Contact us</title>
-        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/ccfile.css">
       </head>
       <body>
         <nav>
