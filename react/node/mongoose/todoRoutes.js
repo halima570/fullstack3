@@ -17,4 +17,12 @@
         .route("/todo/:id")
         .put(todoList.updateTodo)
         .delete(todoList.deleteTodo);
+
+
+        app
+        .route("/email")
+        .post(todoList.createEmail)
+        .get(todoList.findemail)
+        .put(todoList.findandupdate)
+        .delete(todoList.findandremove)
     };

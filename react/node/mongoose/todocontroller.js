@@ -1,6 +1,26 @@
 const  Todo = require("./todoModel");
-
+const EmailModel= require("./email")
+const UserModel=require('./User')
 // listAllTodos function - To list all todos
+
+
+let model = new UserModel()
+model.fullName = 'Thomas Anderson'
+console.log(model.toJSON())  // Output model fields as JSON
+console.log()
+console.log(model.fullName) 
+
+let initials = model.getInitials()
+console.log(initials)
+
+UserModel.getUsers()
+  .then(docs => {
+    console.log(docs)
+  })
+  .catch(err => {
+    console.error(err)
+  })
+  
 exports.listAllTodos=(req, res) => {
     // Todo.find({}, (err, todo) => {
     // if (err) {
@@ -8,6 +28,9 @@ exports.listAllTodos=(req, res) => {
     // }
     // res.status(200).json(todo);
     // });
+
+
+   // Output the full name
 
 Todo.find({})
 .then((todo)=>res.send(todo))
@@ -44,7 +67,67 @@ exports.createNewTodo = (req, res) => {
     // .then(()=> res.send("Todo successfully deleted"))
     // .catch(err=>res.send(err))
     // };
-    exports.deleteTodo = async (req, res) => {
+    exports.createEmail = async (req, res) => {
+      EmailModel.create({
+        email: 'ada.lovelace@gmail.com'
+      })
+         .then(doc => {
+          res.send(doc)
+            })
+         .catch(err => {
+      res.send(err)   })
+      };
+
+exports.findemail=async (req,res)=>{
+EmailModel
+.find({
+  email: 'ada.lovelace@gmail.com'   // search query
+})
+.then(doc => {
+  res.send(doc)
+})
+.catch(err => {
+  res.send(err)
+})}
+
+exports.findandupdate=async (req,res)=>{
+  EmailModel
+  .findOneAndUpdate(
+    {
+      email: 'ada.lovelace@gmail.com'  // search query
+    }, 
+    {
+      email: 'theoutlander@live.com'   // field:values to update
+    },
+    {
+      new: true,                       // return updated doc
+      runValidators: true              // validate before update
+    })
+  .then(doc => {
+    res.send(doc)
+  })
+  .catch(err => {
+    res.send(err)
+  })
+}
+
+exports.findandremove=async (req,res)=>{
+  EmailModel
+  .findOneAndRemove({
+    email: 'theoutlander@live.com'
+  })
+  .then(response => {
+   res.send(response)
+  })
+  .catch(err => {
+    res.send(err)
+  })
+
+
+}
+
+
+      exports.deleteTodo = async (req, res) => {
         try {
           await Todo.deleteOne({ _id: req.params.id });
           res.send("Todo successfully deleted" );
@@ -53,3 +136,5 @@ exports.createNewTodo = (req, res) => {
         }
       };
 
+
+  

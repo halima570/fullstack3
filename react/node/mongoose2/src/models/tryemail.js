@@ -2,16 +2,15 @@ let EmailModel = require('./email')
 //let timestampPlugin = require('./plugins/timestamp')
 
 
-const msg = new EmailModel({
+
+EmailModel.create({
   email: 'ada.lovelace@gmail.com'
 })
-msg.create()
    .then(doc => {
-     console.log(doc)
-   })
+    return doc
+      })
    .catch(err => {
-     console.error(err)
-   })
+return err   })
 //   EmailModel
 //   .find({
 //     email: 'ada.lovelace@gmail.com'   // search query
