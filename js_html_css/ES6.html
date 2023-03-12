@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+  
+  // JAM3 PRICE 
+const products = [
+ { name: 'Milk', price: 15 },
+ { name: 'Water', price: 9 },
+ { name: 'Bread', price: 5 },
+]
+
+const changeProducts=()=>products.reduce((total,product)=>(product.price+total),0);
+
+console.log(changeProducts());
+
+
+
+
+
+//j'ai pas compris
+const pounds = [11, 21, 16]
+const avg = pounds.reduce((total, amount, index, array) => {
+ total += amount
+ if (index === array.length - 1) {
+   return total / array.length
+ } else {
+   return total
+ }
+}, 0)
+console.log(avg) /* */
+//Object.freeze();
+//String.match();
+//'use strict';
+// _ 
+//export default
+//pourquoi on utilise les promises
+//type of script
+/*
+<script type="importmap">
+  {
+    "imports": {
+      "shapes": "./shapes/square.js",
+      "shapes/square": "./modules/shapes/square.js",
+      "https://example.com/shapes/": "/shapes/square/",
+      "https://example.com/shapes/square.js": "./shapes/square.js",
+      "../shapes/square": "./shapes/square.js",
+    }
+
+///////
+function getCount(str) {
+ return str.split('').filter(c => "aeiouAEIOU".includes(c)).length;
+}
+/////
+  let newe="";
+  s=s.toLowerCase();
+  for(let i=0;i<s.length;i++){
+    
+   newe+=s[i].toUpperCase()+s[i].repeat(i)+"-"
+  }
+ return newe.slice(0,-1);
+or
+function accum(s) {
+	return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+}
+///
+const isSquare = n => Number.isInteger(Math.sqrt(n));
+//////////////
+function XO(str) {
+    return str.toLowerCase().split('x').length === str.toLowerCase().split('o').length;
+}
+////
+function findShort(s){
+    return Math.min(...s.split(" ").map (s => s.length));
+}
+///////////////
+function disemvowel(str) {
+  return str.replace(/[aeiou]/gi, '');
+}
+/////////
+function nbYear(p0, percent, aug, p) {
+    
+  for (var years = 0; p0 < p; years++) {
+    p0 = Math.floor(p0 + p0 * percent / 100 + aug);
+  }
+  return years
+}///////////
+function maskify(cc) {
+  return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
+}//////////
+const removeChar = str => {
+    return str.slice(1, str.length - 1)
+}/////////
+ return String(num);
+  return ''+num;
+  return num.toString();
+  ////////
+  return eval(value1 + operation + value2);
+  //////////
+  function financial(x) {
+  return Number.parseFloat(x).toFixed(2);
+}
+
+console.log(financial(123.456));
+// Expected output: "123.46"
+/////////////////////
+return str.endsWith(ending);
+//////
+ return arrayOfSheeps.filter(Boolean).length;
+ ///////////
+ return parseInt(arr.join(""), 2);
+ ///////////
+   return "found the needle at position " + haystack.indexOf("needle");
+/////////////
+
+Array.from(String(n), Number).reverse();
+  return n.toString().split('').reverse().map(Number);
+  //////////
+  function arithmetic(a, b, operator){
+  optable = { "add":"+", "subtract": "-", "multiply": "*" , "divide":"/"};
+  return eval(a + optable[operator] + b); 
+}
+/////////
+function monkeyCount(n) {
+  return Array.from({length:n}, (_,i)=>i+1)
+}///////////
+
+
+
+
+
+
+  }*/// intersectionObsever js
+</script>
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

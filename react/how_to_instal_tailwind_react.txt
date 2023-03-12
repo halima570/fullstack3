@@ -2,7 +2,7 @@ npm install -D tailwindcss
 npx tailwindcss init
 
 content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+   `
   ],
 
 @tailwind base;
